@@ -16,7 +16,7 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-
+import android.content.Intent;
 import java.util.ArrayList;
 
 public class ListarCustom extends AppCompatActivity implements MascotaAdapter.OnAccionListener {
@@ -91,9 +91,21 @@ public class ListarCustom extends AppCompatActivity implements MascotaAdapter.On
 
     @Override
     public void onEditar(int posicion, Mascota mascota) {
-        Toast.makeText(this, "Editar: " + mascota.getId(), Toast.LENGTH_SHORT).show();
-    }
+        Intent intent = new Intent(this, Actualizar.class);
 
+        intent.putExtra("id", mascota.getId());
+        intent.putExtra("tipo", mascota.getTipo());
+        intent.putExtra("nombre", mascota.getNombre());
+        intent.putExtra("color", mascota.getColor());
+        intent.putExtra("pesokg", mascota.getPesokg());
+
+        startActivity(intent);
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        obtenerDatos();
+    }
     @Override
     public void onEliminar(int position, Mascota mascota) {
         adapter.eliminarItem(position);
