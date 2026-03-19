@@ -36,7 +36,7 @@ public class Registrar extends AppCompatActivity {
     RequestQueue requestQueue;
 
     //URL
-    private final String URL ="http://192.168.56.1:3000/mascotas";
+    private final String URL ="http://10.15.232.169/mascotas";
 
     private void loadUI(){
         edtTipo = findViewById(R.id.edtTipo);

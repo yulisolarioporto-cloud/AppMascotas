@@ -24,7 +24,7 @@ public class Listar extends AppCompatActivity {
     ListView lsvMascotas;
     RequestQueue requestQueue;
 
-    private final String URL ="http://192.168.56.1:3000/mascotas";
+    private final String URL ="http://10.15.232.169/mascotas";
 
     private void loadUI(){
         lsvMascotas= findViewById(R.id.lsvMascotas);

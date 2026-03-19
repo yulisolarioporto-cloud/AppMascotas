@@ -49,7 +49,6 @@ public class Actualizar extends AppCompatActivity {
 
         loadUI();
 
-        //  RECIBIR DATOS
         Bundle datos = getIntent().getExtras();
 
         if (datos != null){
